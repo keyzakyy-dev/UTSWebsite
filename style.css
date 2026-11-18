@@ -1,0 +1,521 @@
+:root {
+  --latar: #f4f5f2;
+  --kartu: #ffffff;
+  --teks: #17242b;
+  --teks-redup: #69777d;
+  --garis: #d9e0de;
+  --utama: #0e6578;
+  --utama-muda: #e0f0f0;
+  --oranye: #b95724;
+  --oranye-muda: #fce9df;
+  --merah: #b64237;
+  --kepala: #132f3a;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--latar);
+  color: var(--teks);
+  font-family: Arial, sans-serif;
+}
+
+h1, h2 {
+  margin: 0;
+}
+
+button {
+  font: inherit;
+  border: 0;
+  cursor: pointer;
+}
+
+header {
+  padding: 16px 24px;
+  background: var(--kartu);
+  border-bottom: 1px solid var(--garis);
+}
+
+h1 {
+  font-size: 1.3rem;
+}
+
+main {
+  width: calc(100% - 48px);
+  max-width: 1120px;
+  margin: 28px auto 60px;
+}
+
+/* Ringkasan atas */
+
+#ringkasan {
+  display: grid;
+  grid-template-columns: 1.55fr 1fr 1fr;
+  gap: 1px;
+  margin-bottom: 20px;
+  background: var(--garis);
+  border: 1px solid var(--garis);
+  border-radius: 13px;
+  overflow: hidden;
+}
+
+.kartu-ringkasan {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 20px 24px;
+  background: var(--kartu);
+}
+
+.kartu-utama {
+  background: var(--kepala);
+}
+
+.kartu-utama .label-ringkasan {
+  color: rgba(255,255,255,0.6);
+}
+
+.label-ringkasan {
+  color: var(--teks-redup);
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.nilai-ringkasan {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.nilai-besar {
+  color: #fff;
+  font-size: 2.2rem;
+}
+
+/* Bagian utama */
+
+#area-pelanggan, #area-katalog, #area-ringkasan, #area-riwayat {
+  padding: 24px;
+  background: var(--kartu);
+  border: 1px solid var(--garis);
+  border-radius: 12px;
+}
+
+#area-pelanggan, #area-katalog, #area-ringkasan {
+  margin-bottom: 18px;
+}
+
+#area-pelanggan {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  column-gap: 42px;
+  align-items: end;
+}
+
+#area-pelanggan .kepala-bagian {
+  grid-column: 1 / -1;
+  margin-bottom: 16px;
+}
+
+#area-pelanggan .grup-provider {
+  margin-top: 0;
+}
+
+/* Form nomor handphone */
+
+.grup-nomor {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.grup-nomor label,
+.label-provider {
+  color: var(--teks-redup);
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+#nomor-hp {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid var(--garis);
+  border-radius: 9px;
+  background: var(--latar);
+  color: var(--teks);
+  font: inherit;
+}
+
+#nomor-hp:focus {
+  border-color: var(--utama);
+}
+
+/* Pilihan provider */
+
+.grup-provider {
+  margin-top: 20px;
+}
+
+.label-provider {
+  display: block;
+  margin-bottom: 10px;
+}
+
+#daftar-provider {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 8px;
+}
+
+.pilihan-provider {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 9px 10px;
+  border: 1px solid var(--garis);
+  border-radius: 8px;
+  background: var(--kartu);
+  color: var(--teks);
+  text-align: left;
+}
+
+.pilihan-provider.aktif {
+  border-color: var(--utama);
+  background: var(--utama-muda);
+}
+
+.logo-provider {
+  flex-shrink: 0;
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+  border: 1px solid var(--garis);
+  background: #fff;
+  object-fit: cover;
+}
+
+.nama-provider {
+  font-size: 0.82rem;
+  font-weight: 600;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.kepala-bagian {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  flex-wrap: wrap;
+  margin-bottom: 18px;
+}
+
+.kepala-bagian h2 {
+  font-size: 1.05rem;
+}
+
+/* Tab Pulsa / Paket Data */
+
+.pilih-jenis {
+  display: flex;
+  gap: 4px;
+  padding: 4px;
+  border: 1px solid var(--garis);
+  border-radius: 10px;
+}
+
+.jenis {
+  padding: 8px 16px;
+  border-radius: 7px;
+  background: transparent;
+  color: var(--teks-redup);
+  font-size: 0.86rem;
+  font-weight: 600;
+}
+
+.jenis.aktif {
+  background: var(--utama);
+  color: #fff;
+}
+
+/* Kartu paket */
+
+#daftar-paket {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+.kartu-paket {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-height: 190px;
+  padding: 16px;
+  background: var(--kartu);
+  border: 1px solid var(--garis);
+  border-radius: 9px;
+}
+
+.ikon-paket {
+  flex-shrink: 0;
+  width: 34px;
+  height: 34px;
+  border: 1px solid var(--garis);
+  border-radius: 7px;
+  background: #fff;
+  object-fit: cover;
+}
+
+.nominal-paket {
+  font-size: 1.15rem;
+  font-weight: 700;
+}
+
+.keterangan-paket {
+  min-height: 1.4em;
+  color: var(--teks-redup);
+  font-size: 0.78rem;
+  line-height: 1.4;
+}
+
+.tombol-topup {
+  width: 100%;
+  margin-top: auto;
+  padding: 9px;
+  border-radius: 7px;
+  background: var(--utama);
+  color: #fff;
+  font-size: 0.86rem;
+  font-weight: 700;
+}
+
+/* Ringkasan pilihan */
+
+.baris-ringkasan {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 12px 0;
+  border-top: 1px solid var(--garis);
+}
+
+.baris-ringkasan:first-child {
+  border-top: 0;
+}
+
+.label-ringkasan-detail {
+  color: var(--teks-redup);
+  font-size: 0.85rem;
+}
+
+.nilai-ringkasan-detail {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.nilai-ringkasan-detail .logo-provider {
+  width: 24px;
+  height: 24px;
+}
+
+.baris-total {
+  border-top: 2px solid var(--garis);
+  margin-top: 4px;
+  padding-top: 16px;
+}
+
+.baris-total .label-ringkasan-detail {
+  color: var(--teks);
+  font-weight: 700;
+}
+
+.baris-total .nilai-ringkasan-detail {
+  color: var(--utama);
+  font-size: 1.2rem;
+}
+
+.aksi-ringkasan {
+  display: flex;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.aksi-ringkasan button {
+  padding: 11px 18px;
+  border-radius: 8px;
+  font-size: 0.86rem;
+  font-weight: 700;
+}
+
+#tombol-konfirmasi {
+  background: var(--utama);
+  color: #fff;
+}
+
+#tombol-batal-pilihan {
+  border: 1px solid var(--garis);
+  background: transparent;
+  color: var(--teks);
+}
+
+/* Riwayat */
+
+#tombol-bersihkan {
+  padding: 9px 13px;
+  border: 1px solid var(--garis);
+  border-radius: 8px;
+  background: transparent;
+  color: var(--merah);
+  font-size: 0.82rem;
+  font-weight: 600;
+}
+
+.baris-riwayat {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 2px;
+  border-top: 1px solid var(--garis);
+}
+
+.baris-riwayat:first-child {
+  border-top: 0;
+}
+
+.rincian-riwayat {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  min-width: 0;
+  flex: 1;
+}
+
+.nominal-riwayat {
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.keterangan-riwayat {
+  color: var(--teks-redup);
+  font-size: 0.8rem;
+}
+
+.badge-jenis {
+  padding: 4px 9px;
+  border-radius: 20px;
+  background: var(--utama-muda);
+  color: var(--utama);
+  font-size: 0.7rem;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.badge-jenis.data {
+  background: var(--oranye-muda);
+  color: var(--oranye);
+}
+
+.waktu-riwayat {
+  color: var(--teks-redup);
+  font-size: 0.78rem;
+  white-space: nowrap;
+}
+
+.tombol-hapus {
+  padding: 6px 10px;
+  border: 1px solid var(--garis);
+  border-radius: 7px;
+  background: transparent;
+  color: var(--teks-redup);
+  font-size: 0.76rem;
+}
+
+.teks-kosong {
+  margin: 8px 0 4px;
+  color: var(--teks-redup);
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+/* Notifikasi */
+
+#notifikasi {
+  padding: 14px 24px;
+  margin-bottom: 18px;
+  background: var(--kartu);
+  border: 1px solid var(--garis);
+  border-radius: 12px;
+  color: var(--utama);
+  font-size: 0.88rem;
+  font-weight: 600;
+}
+
+.tersembunyi {
+  display: none !important;
+}
+
+footer {
+  padding: 0 24px 32px;
+  color: var(--teks-redup);
+  text-align: center;
+  font-size: 0.8rem;
+}
+
+@media (max-width: 780px) {
+  #ringkasan {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .kartu-utama {
+    grid-column: 1 / -1;
+  }
+
+  #daftar-paket {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  #area-pelanggan {
+    grid-template-columns: 1fr;
+  }
+
+  #daftar-provider {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (max-width: 560px) {
+  main {
+    width: calc(100% - 28px);
+    max-width: 500px;
+    margin-top: 20px;
+  }
+
+  #ringkasan, #daftar-paket {
+    grid-template-columns: 1fr;
+  }
+
+  #area-pelanggan, #area-katalog, #area-ringkasan, #area-riwayat {
+    padding: 18px;
+  }
+
+  #daftar-provider {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .baris-riwayat {
+    flex-wrap: wrap;
+  }
+
+  .waktu-riwayat {
+    width: 100%;
+    padding-left: 52px;
+  }
+}

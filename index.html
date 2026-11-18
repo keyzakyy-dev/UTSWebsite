@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Top Up Pulsa</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header>
+    <h1>Top Up Pulsa</h1>
+  </header>
+
+  <main>
+
+    <section id="ringkasan" aria-label="Ringkasan top up">
+      <div class="kartu-ringkasan kartu-utama">
+        <span class="label-ringkasan">Total Nominal Top Up</span>
+        <span class="nilai-ringkasan nilai-besar" id="total-nominal">Rp 0</span>
+      </div>
+      <div class="kartu-ringkasan">
+        <span class="label-ringkasan">Jumlah Transaksi</span>
+        <span class="nilai-ringkasan" id="total-transaksi">0</span>
+      </div>
+      <div class="kartu-ringkasan">
+        <span class="label-ringkasan">Nominal Terakhir</span>
+        <span class="nilai-ringkasan" id="nominal-terakhir">Rp 0</span>
+      </div>
+    </section>
+
+    <section id="area-pelanggan">
+      <div class="kepala-bagian">
+        <div>
+          <h2>Detail Top Up</h2>
+        </div>
+      </div>
+
+      <div class="grup-nomor">
+        <label for="nomor-hp">Nomor Handphone</label>
+        <input type="tel" id="nomor-hp" inputmode="numeric" placeholder="08xxxxxxxxxx" maxlength="15" autocomplete="tel" />
+      </div>
+
+      <div class="grup-provider">
+        <span class="label-provider">Pilih Provider</span>
+        <div id="daftar-provider"></div>
+      </div>
+    </section>
+
+    <section id="area-katalog">
+      <div class="kepala-bagian">
+        <div>
+          <h2>Pilih Paket</h2>
+        </div>
+        <div class="pilih-jenis">
+          <button type="button" class="jenis aktif" data-jenis="pulsa">Pulsa</button>
+          <button type="button" class="jenis" data-jenis="data">Paket Data</button>
+        </div>
+      </div>
+      <div id="daftar-paket"></div>
+    </section>
+
+    <section id="area-ringkasan" class="tersembunyi">
+      <div class="kepala-bagian">
+        <div>
+          <h2>Ringkasan Top Up</h2>
+        </div>
+      </div>
+      <div id="isi-ringkasan"></div>
+      <div class="aksi-ringkasan">
+        <button type="button" id="tombol-konfirmasi">Konfirmasi Top Up</button>
+        <button type="button" id="tombol-batal-pilihan">Batal</button>
+      </div>
+    </section>
+
+    <div id="notifikasi" class="tersembunyi" role="status" aria-live="polite"></div>
+
+    <section id="area-riwayat">
+      <div class="kepala-bagian">
+        <div>
+          <h2>Riwayat Top Up</h2>
+        </div>
+        <button type="button" id="tombol-bersihkan" class="tersembunyi">Bersihkan Riwayat</button>
+      </div>
+      <div id="daftar-riwayat"></div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>Sayyid Dzaky Farhan | 2406007 | Institut Teknologi Garut</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

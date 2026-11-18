@@ -1,0 +1,314 @@
+LAPORAN APLIKASI WEB TOP UP PULSA DAN PAKET DATA
+
+Nama   : Sayyid Dzaky Farhan
+NIM    : 2406007
+Kampus : Institut Teknologi Garut
+
+==================================================
+1. NAMA APLIKASI
+==================================================
+
+Top Up Pulsa dan Paket Data
+
+==================================================
+2. DESKRIPSI APLIKASI
+==================================================
+
+Aplikasi ini merupakan simulasi top up pulsa dan paket data berbasis web. Pengguna dapat memasukkan nomor handphone, memilih provider, memilih jenis produk, dan memilih nominal yang tersedia.
+
+Provider yang tersedia adalah Telkomsel, Indosat IM3, XL Axiata, Tri (3), dan Smartfren. Setiap provider memiliki pilihan pulsa dan paket data yang berbeda.
+
+Setelah memilih paket, pengguna melihat ringkasan transaksi terlebih dahulu. Transaksi baru masuk ke riwayat setelah tombol Konfirmasi Top Up ditekan.
+
+Harga, kuota, dan masa berlaku paket yang digunakan merupakan data simulasi untuk kebutuhan pembelajaran. Aplikasi ini belum terhubung dengan sistem pembayaran atau server provider.
+
+==================================================
+3. TUJUAN PEMBUATAN
+==================================================
+
+Tujuan aplikasi ini adalah:
+
+1. Membuat aplikasi web interaktif menggunakan HTML, CSS, dan JavaScript.
+2. Menerapkan manipulasi DOM pada halaman web.
+3. Membuat pilihan paket yang berubah sesuai provider.
+4. Membuat alur transaksi dari pemilihan paket sampai konfirmasi.
+5. Menyimpan riwayat transaksi pada browser.
+6. Membuat tampilan yang dapat digunakan pada komputer dan handphone.
+
+==================================================
+4. SPESIFIKASI KEBUTUHAN
+==================================================
+
+A. Perangkat keras
+
+1. Laptop atau komputer.
+2. RAM minimal 2 GB.
+3. Ruang penyimpanan untuk folder aplikasi.
+
+B. Perangkat lunak
+
+1. Sistem operasi Windows, Linux, atau macOS.
+2. Browser modern seperti Google Chrome, Mozilla Firefox, atau Microsoft Edge.
+3. Text editor seperti Visual Studio Code atau Notepad++.
+4. Python 3 jika ingin menjalankan aplikasi dengan server lokal.
+
+C. Teknologi
+
+1. HTML5 untuk membuat struktur halaman.
+2. CSS3 untuk mengatur warna, ukuran, posisi, dan tampilan responsif.
+3. JavaScript untuk mengatur data dan interaksi pengguna.
+4. localStorage untuk menyimpan nomor handphone dan riwayat transaksi.
+
+Aplikasi tidak memakai backend atau database server. Data transaksi disimpan pada browser yang digunakan. Tampilan memakai font Arial bawaan browser sehingga aplikasi dapat dijalankan tanpa koneksi internet. Logo provider disimpan di dalam folder logos.
+
+==================================================
+5. STRUKTUR FILE
+==================================================
+
+index.html
+
+Berisi struktur halaman aplikasi, seperti judul, ringkasan transaksi, input nomor handphone, pilihan provider, pilihan jenis paket, daftar paket, ringkasan transaksi, riwayat, dan footer.
+
+style.css
+
+Berisi aturan tampilan halaman. File ini mengatur warna, ukuran tulisan, jarak antar elemen, kartu paket, tombol, riwayat transaksi, serta tampilan pada ukuran layar yang berbeda.
+
+app.js
+
+Berisi data provider dan paket, validasi nomor, fungsi untuk menampilkan data, event tombol, proses konfirmasi, penyimpanan localStorage, dan pengelolaan riwayat.
+
+logos/
+
+Berisi gambar logo Telkomsel, Indosat IM3, XL Axiata, Tri (3), dan Smartfren.
+
+laporan.txt
+
+Berisi penjelasan aplikasi, cara kerja, kebutuhan, penerapan DOM, penyimpanan data, dan hasil pengujian.
+
+==================================================
+6. FITUR APLIKASI
+==================================================
+
+1. Input nomor handphone
+
+Pengguna dapat memasukkan nomor handphone tujuan. Karakter yang diterima hanya angka. Nomor yang digunakan harus diawali 08 dan memiliki panjang 10 sampai 13 digit.
+
+2. Pilihan provider
+
+Pengguna dapat memilih provider Telkomsel, Indosat IM3, XL Axiata, Tri (3), atau Smartfren. Logo setiap provider ditampilkan pada tombol pilihan.
+
+3. Pilihan jenis produk
+
+Pengguna dapat memilih dua jenis produk, yaitu Pulsa dan Paket Data.
+
+4. Daftar paket sesuai provider
+
+Setelah provider dipilih, daftar paket menyesuaikan provider tersebut. Data paket dibuat dalam JavaScript dan ditampilkan ke halaman menggunakan DOM.
+
+5. Ringkasan transaksi
+
+Saat pengguna memilih paket, aplikasi menampilkan ringkasan yang berisi provider, nomor tujuan, jenis paket, keterangan paket, dan total bayar.
+
+6. Konfirmasi top up
+
+Tombol Konfirmasi Top Up menyimpan transaksi ke riwayat. Sebelum tombol tersebut ditekan, paket belum dianggap sebagai transaksi selesai.
+
+7. Membatalkan pilihan
+
+Tombol Batal menghapus pilihan yang sedang ditampilkan pada ringkasan tanpa menambah riwayat.
+
+8. Ringkasan jumlah transaksi
+
+Bagian atas halaman menampilkan total nominal top up, jumlah transaksi, dan nominal transaksi terakhir.
+
+9. Riwayat top up
+
+Riwayat menampilkan nominal, provider, nomor tujuan, keterangan paket, jenis produk, waktu transaksi, dan logo provider.
+
+10. Menghapus transaksi
+
+Setiap baris riwayat memiliki tombol Hapus untuk menghapus satu transaksi.
+
+11. Menghapus semua riwayat
+
+Tombol Bersihkan Riwayat digunakan untuk menghapus seluruh transaksi setelah pengguna memberikan konfirmasi.
+
+12. Notifikasi
+
+Aplikasi menampilkan notifikasi ketika nomor tidak valid atau transaksi berhasil dikonfirmasi.
+
+13. Tampilan responsif
+
+Susunan provider dan kartu paket berubah menyesuaikan lebar layar. Dengan demikian, aplikasi tetap dapat digunakan pada layar komputer, tablet, dan handphone.
+
+==================================================
+7. CARA KERJA APLIKASI
+==================================================
+
+Urutan penggunaan aplikasi adalah sebagai berikut:
+
+1. Pengguna membuka halaman aplikasi.
+2. Pengguna memasukkan nomor handphone.
+3. Pengguna memilih salah satu provider.
+4. Pengguna memilih Pulsa atau Paket Data.
+5. Aplikasi menampilkan daftar paket sesuai pilihan.
+6. Pengguna menekan tombol Top Up pada salah satu paket.
+7. Aplikasi memeriksa nomor handphone.
+8. Jika nomor benar, ringkasan transaksi ditampilkan.
+9. Pengguna dapat menekan Batal atau Konfirmasi Top Up.
+10. Jika dikonfirmasi, data transaksi dimasukkan ke array riwayat.
+11. Array riwayat disimpan ke localStorage.
+12. Ringkasan jumlah transaksi dan daftar riwayat diperbarui.
+
+==================================================
+8. PENERAPAN DOM
+==================================================
+
+DOM atau Document Object Model adalah cara JavaScript membaca dan mengubah elemen HTML. Pada aplikasi ini, DOM digunakan agar isi halaman dapat berubah berdasarkan tindakan pengguna tanpa memuat ulang halaman.
+
+A. Mengambil elemen HTML
+
+JavaScript mengambil elemen menggunakan document.getElementById() dan document.querySelector(). Contoh:
+
+var nomorHp = document.getElementById('nomor-hp');
+var daftarPaket = document.getElementById('daftar-paket');
+
+Elemen nomorHp digunakan untuk membaca nomor handphone. Elemen daftarPaket digunakan untuk menampilkan kartu paket.
+
+B. Menampilkan provider
+
+Fungsi tampilkanProvider() membaca data provider, kemudian membuat tombol provider. Setiap tombol berisi logo dan nama provider. Tombol tersebut dimasukkan ke elemen daftar-provider.
+
+C. Menampilkan paket
+
+Fungsi tampilkanPaket() membaca data paket dari provider dan jenis produk yang aktif. Fungsi ini melakukan perulangan menggunakan for. Setiap paket dibuat menjadi satu kartu HTML yang berisi logo, nominal, keterangan, dan tombol Top Up.
+
+D. Menangani tombol
+
+Aplikasi memakai addEventListener() untuk membaca tindakan pengguna. Event digunakan pada tombol provider, tombol Pulsa dan Paket Data, tombol Top Up, tombol Konfirmasi, tombol Batal, tombol Hapus, dan tombol Bersihkan Riwayat.
+
+E. Menampilkan ringkasan pilihan
+
+Ketika tombol Top Up ditekan, data paket disimpan sementara pada variabel pilihan. Fungsi tampilkanRingkasanPilihan() kemudian mengisi bagian Ringkasan Top Up.
+
+Data tersebut belum dimasukkan ke riwayat. Jika tombol Batal ditekan, variabel pilihan dikosongkan.
+
+F. Menyimpan transaksi
+
+Ketika Konfirmasi Top Up ditekan, data pada variabel pilihan dibuat menjadi transaksi baru. Transaksi ditambahkan ke array riwayat, kemudian halaman ditampilkan ulang menggunakan fungsi tampilkanSemua().
+
+G. Mengubah isi halaman
+
+JavaScript menggunakan innerHTML untuk mengisi daftar provider, daftar paket, ringkasan pilihan, dan daftar riwayat. JavaScript juga menggunakan textContent untuk memperbarui total nominal, jumlah transaksi, dan nominal terakhir.
+
+H. Menyembunyikan ringkasan
+
+Section ringkasan memiliki class tersembunyi. Class tersebut ditambahkan saat belum ada pilihan dan dihapus saat pengguna memilih paket. Cara ini digunakan untuk menampilkan atau menyembunyikan ringkasan tanpa memuat ulang halaman.
+
+==================================================
+9. PENYIMPANAN DATA
+==================================================
+
+Aplikasi menyimpan data menggunakan localStorage. Penyimpanan ini tersedia langsung pada browser dan tidak membutuhkan database server.
+
+Data yang disimpan adalah:
+
+1. riwayatTopUp, yaitu daftar transaksi yang sudah dikonfirmasi.
+2. nomorHp, yaitu nomor handphone terakhir yang dimasukkan.
+
+Array riwayat diubah menjadi teks JSON saat disimpan. Contoh proses penyimpanan:
+
+localStorage.setItem('riwayatTopUp', JSON.stringify(riwayat));
+
+Saat aplikasi dibuka, data diambil kembali dan diubah menjadi array JavaScript:
+
+var riwayat = JSON.parse(localStorage.getItem('riwayatTopUp')) || [];
+
+Dengan cara tersebut, riwayat masih dapat ditampilkan setelah halaman dimuat ulang pada browser yang sama.
+
+localStorage bukan database online. Data hanya tersedia pada browser dan perangkat tempat aplikasi digunakan. Jika aplikasi dikembangkan menjadi aplikasi sebenarnya, penyimpanan dapat dipindahkan ke database seperti MySQL atau Firebase melalui backend.
+
+==================================================
+10. CARA MENJALANKAN APLIKASI
+==================================================
+
+Cara pertama adalah membuka file secara langsung:
+
+1. Buka folder UTSWeb.
+2. Klik dua kali file index.html.
+3. Halaman aplikasi akan terbuka di browser.
+
+Cara kedua adalah menggunakan server lokal Python:
+
+1. Buka Terminal pada folder UTSWeb.
+2. Jalankan perintah berikut:
+
+python3 -m http.server 8000
+
+3. Buka browser.
+4. Masukkan alamat http://localhost:8000.
+5. Untuk menghentikan server, tekan Ctrl + C pada Terminal.
+
+==================================================
+11. OUTPUT APLIKASI
+==================================================
+
+Output aplikasi berupa halaman web dengan bagian berikut:
+
+1. Header dengan judul Top Up Pulsa.
+2. Ringkasan total nominal, jumlah transaksi, dan nominal terakhir.
+3. Input nomor handphone.
+4. Pilihan lima provider dengan logo.
+5. Pilihan Pulsa dan Paket Data.
+6. Daftar kartu paket sesuai provider.
+7. Ringkasan paket sebelum konfirmasi.
+8. Tombol Konfirmasi Top Up dan Batal.
+9. Riwayat transaksi.
+10. Tombol Hapus dan Bersihkan Riwayat.
+11. Footer berisi nama, NIM, dan institusi pembuat.
+
+==================================================
+12. PENGUJIAN APLIKASI
+==================================================
+
+Pengujian dilakukan dengan membuka aplikasi pada browser dan mencoba setiap fitur utama.
+
+1. Halaman aplikasi dapat dibuka melalui index.html.
+2. Nomor handphone dapat diisi.
+3. Karakter selain angka dihapus dari input nomor.
+4. Nomor yang tidak sesuai aturan ditolak.
+5. Provider dapat diganti.
+6. Daftar paket berubah setelah provider diganti.
+7. Jenis Pulsa dan Paket Data dapat diganti.
+8. Kartu paket dapat dipilih.
+9. Ringkasan transaksi muncul setelah paket dipilih.
+10. Tombol Batal menghapus ringkasan tanpa menambah transaksi.
+11. Tombol Konfirmasi menambah transaksi ke riwayat.
+12. Total nominal dan jumlah transaksi berubah setelah konfirmasi.
+13. Satu transaksi dapat dihapus.
+14. Semua transaksi dapat dibersihkan.
+15. Riwayat tetap tampil setelah halaman dimuat ulang.
+16. Tampilan dapat digunakan pada layar kecil.
+
+==================================================
+13. CONTOH PENGGUNAAN
+==================================================
+
+1. Masukkan nomor 089656540799.
+2. Pilih provider Tri (3).
+3. Pilih Paket Data.
+4. Pilih paket Rp 30.000 dengan keterangan 9GB / 30 hari.
+5. Periksa Ringkasan Top Up.
+6. Tekan Konfirmasi Top Up.
+7. Transaksi tampil pada Riwayat Top Up.
+8. Total nominal dan jumlah transaksi ikut berubah.
+
+==================================================
+14. KESIMPULAN
+==================================================
+
+Aplikasi Top Up Pulsa dan Paket Data berhasil dibuat menggunakan HTML, CSS, dan JavaScript. Aplikasi ini dapat menerima nomor handphone, menampilkan pilihan provider, menampilkan paket yang sesuai, membuat ringkasan, menyimpan transaksi setelah konfirmasi, dan menampilkan riwayat.
+
+Konsep DOM digunakan pada hampir seluruh interaksi aplikasi. JavaScript mengambil elemen HTML, membaca input, membuat tampilan provider dan paket, mengubah isi ringkasan, serta memperbarui riwayat. localStorage digunakan agar data tetap tersimpan pada browser yang sama.
+
+Aplikasi ini masih berupa simulasi. Belum ada proses pembayaran nyata dan belum terhubung dengan server provider. Namun, aplikasi sudah memenuhi kebutuhan dasar sistem web interaktif dengan penyimpanan data lokal.
